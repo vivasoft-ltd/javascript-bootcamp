@@ -1,8 +1,8 @@
 এই লেখাটি পড়ার আগে আমার **Execution Context** এবং **Scope** নিয়ে লেখা দুটি আর্টিকেল পড়ে আসতে বলবো। তাহলে **Hoisting** বুঝতে আপনার জন্যে অনেক সহজ হয়ে যাবে।
 
-১। [Execution Context](https://shahansdiary.com/execution-context-in-javascript/)
+১। [Execution Context](../1.%20execution-context/README.md)
 
-২। [Scope](https://shahansdiary.com/what-is-scope-in-javascript/)
+২। [Scope](../2.%20scope/README.md)
 
 ### Hoisting কি?
 
