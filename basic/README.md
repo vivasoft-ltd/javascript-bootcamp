@@ -1,4 +1,4 @@
-## Table of content
+## Table of contents
 
 * [Execution Context](1.%20execution-context/README.md)
 * [Scope](2.%20scope/README.md)
