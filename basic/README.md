@@ -11,3 +11,4 @@
 * [Event delegation and propagation](9.%20event-delegation-and-propagation/README.md)
 * [Browser Storage and Caching](10.%20browser-storage-and-caching/README.md)
 * [Debouncing and Throttling](11.%20debouncing-and-throttling/README.md)
+* [Use Strict in JavaScript](12.%20use-strict/README.md)
