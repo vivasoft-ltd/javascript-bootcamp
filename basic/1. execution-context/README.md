@@ -51,7 +51,7 @@ console.log(results); // 70
 
 Creation phase এর পর, গ্লোবাল এক্সিকিউশন কন্টেক্সট execution phase শুরু করে।
 
-### Execution phase
+### ২। Execution phase
 
 Execution phase - এ, জাভাস্ক্রিপ্ট ইঞ্জিন লাইন বাই লাইন কোড এক্সিকিউট করে। এই phase -এ, এটি ভ্যারিয়েবলের মান অ্যাসাইন করে এবং ফাংশন কল এক্সিকিউট করে।
 
