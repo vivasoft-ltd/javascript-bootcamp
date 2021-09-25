@@ -24,6 +24,7 @@ Event propagates in 3 phases. They are:
 3. **Bubble Phase:** Finally, the event bubbles up through ancestors of the target element until the root element, `document`, and `window`. This phase is totally opossite of the **capture phase** _(using our prev example) `window <-- document <-- html <-- body <-- div <-- button`_
 
 If you run the following code, it will be more easier to understand. The code is given below:
+
 _**Example 2:**_
 **Capturing phase:**
 ```html
