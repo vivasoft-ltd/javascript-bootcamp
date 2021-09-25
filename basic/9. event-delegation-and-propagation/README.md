@@ -80,7 +80,7 @@ _**Example 2:**_
 </html>
 ```
 
-_**Example 3 (Full overview):**_
+_**Example 3 (Full overview with polishing our Example 1):**_
 ```html
 <html>
   <body>
