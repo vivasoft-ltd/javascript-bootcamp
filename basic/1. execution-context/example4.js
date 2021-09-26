@@ -1,3 +1,4 @@
+
 {/*
 Time Tide and Javascript waits for none.
     The function fn has an asynchrous function  setTimeout 
@@ -49,5 +50,4 @@ Last line Output of Global Execution Context
 Inside the Global Execution context With SetTimeout of 3 seconds
 Inside function fn1 with the SetTimeout of 3 seconds
 Inside the Global Execution context With SetTimeout of 10 seconds
-
 */}

@@ -1,4 +1,4 @@
-{
+
   /*
 Global Execution Context
 GEC / Global Execution Context is also called 

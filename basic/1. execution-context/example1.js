@@ -1,3 +1,4 @@
+
 {/*
 There are three types of Execution Context in javascript.  
 1.Global Execution Context(GEC)
@@ -33,3 +34,4 @@ output:
 100
 
 */}
+
