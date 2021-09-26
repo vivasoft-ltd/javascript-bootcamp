@@ -1,4 +1,15 @@
-console.log('First Output Inside the Global Execution context')
+
+{/*
+Time Tide and Javascript waits for none.
+    The function fn has an asynchrous function  setTimeout 
+    with a timer of 5 sec. As we know javascript has only a call stack 
+    to execute all code, so it never waits for the timeout.
+    Js engine will send the function to the dom api 
+    and move on to the next line of code
+*/}
+
+
+onsole.log('First Output Inside the Global Execution context')
 
 function fn1(){
     setTimeout(()=>{
@@ -39,5 +50,4 @@ Last line Output of Global Execution Context
 Inside the Global Execution context With SetTimeout of 3 seconds
 Inside function fn1 with the SetTimeout of 3 seconds
 Inside the Global Execution context With SetTimeout of 10 seconds
-
 */}
