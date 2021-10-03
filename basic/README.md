@@ -12,3 +12,4 @@
 10. [Browser Storage and Caching](10.%20browser-storage-and-caching)
 11. [Debouncing and Throttling](11.%20debouncing-and-throttling)
 12. [Use Strict in JavaScript](12.%20use-strict)
+13. [IIFE in JavaScript](13.%20iife-in-javascript)
