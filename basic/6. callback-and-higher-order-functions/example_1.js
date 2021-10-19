@@ -1,5 +1,5 @@
 /* এখানে circleArea এবং squareArea ফাংশন দুটি হচ্ছে Callback ফাংশন
-   areaCalculate ফাংশনটি হচ্ছে Higher Order ফাংশন
+   আর areaCalculate ফাংশনটি হচ্ছে Higher Order ফাংশন
 */
 
 function areaCalculate(arrayWidth, callback) {
