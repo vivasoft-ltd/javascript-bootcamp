@@ -31,3 +31,6 @@ main();
 জাভাস্ক্রিপ্টে setTimeout ছাড়া আরও কিছু ফাংশন আছে যা asynchronous API রয়েছে। যেমনঃ `addEventListener`, `setTimeout`, `setInterval`, যেকোনো ধরনের API কল।
 
 নিচের Graphical Representation টা দেখলে বিষয়টি আরও পরিষ্কার হবে।
+
+![queue-example-jsconf (1)](https://user-images.githubusercontent.com/9677372/144177972-e998b3cf-7b37-4d52-9feb-f7926ffb9eeb.gif)
+
