@@ -34,3 +34,4 @@ main();
 
 ![queue-example-jsconf (1)](https://user-images.githubusercontent.com/9677372/144177972-e998b3cf-7b37-4d52-9feb-f7926ffb9eeb.gif)
 
+এই ছিল আজকের আলোচনা। পরবর্তীতে অন্য কোন বিষয় নিয়ে আবার কথা হবে। হ্যাপি কোডিং।
