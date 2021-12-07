@@ -99,5 +99,6 @@ Execution phase - এ, জাভাস্ক্রিপ্ট ইঞ্জি�
 
 
 ### বাংলা ভিডিও টিউটোরিয়াল 
-> - [085.Execution Context in Javascript | JS All You Need To Know | JS Bangla Tutorials]  (https://www.youtube.com/watch?v=MoPW9pxHMkI)
+> - [Execution Context in Javascript | JS All You Need To Know | JS Bangla Tutorials](https://www.youtube.com/watch?v=MoPW9pxHMkI)
+
 > - [JavaScript Advance (Bangla) Execution Context](https://www.youtube.com/watch?v=Ke0HhvI9tpw)
