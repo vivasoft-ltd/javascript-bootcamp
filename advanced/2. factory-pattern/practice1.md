@@ -15,4 +15,5 @@ const Vehicle2 = {
     PlateNO: 13345,
     startEngine () {console.log("Starting engine."},
     drive () {console.log("Driving car...")}
-}```
+}
+```
