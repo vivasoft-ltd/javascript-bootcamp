@@ -74,3 +74,17 @@ function hoistingFunc() {
 
 hoistingFunc();
 ```
+
+### আরও বাংলা টিউটোরিয়াল 
+> - [জাভাস্ক্রিপ্টঃ স্কোপ(Scope) নিয়ে ধারণা](https://js.zonayed.me/basic/post-15)  
+
+> - [জাভাস্ক্রিপ্ট স্কোপ (JavaScript Scope)](http://bangla.salearningschool.com/recent-posts/জাভাস্ক্রিপ্ট-স্কোপ-javascript-scope/)
+
+
+### বাংলা ভিডিও টিউটোরিয়াল 
+> - [JavaScript Scope and Hoisting Explained | JavaScript Bangla Tutorial](https://www.youtube.com/watch?v=6_4NcQQvxmM)
+
+> - [Scope and Scope Variables | Ultimate Beginner JavaScript Course](https://www.youtube.com/watch?v=HZZ0X2Toiok&t=40s)
+
+
+> - [Javascript Behind The Scene Scope Chain and Lexical Scope in Bangla](https://www.youtube.com/watch?v=LPB6oT_pvu4)
