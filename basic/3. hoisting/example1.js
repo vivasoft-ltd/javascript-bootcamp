@@ -15,7 +15,7 @@ Uncaught ReferenceError: x is not defined
 */}
 
 console.log(x)
-const x = 5
+var x = 5
 
 {/*
 output:
