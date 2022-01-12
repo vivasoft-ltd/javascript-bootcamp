@@ -62,4 +62,21 @@ console.log(newBicycleModelX);
 
 
 //.bind() Method Example
+let biker = {
+    name: 'Jaber Al Nahian'
+}
 
+let getBikerInfo = function (bikeModel) {
+    return this.name + ' use '+ bikeModel;
+}
+
+let bikerInfo = getBikerInfo.bind(biker);
+
+console.log(bikerInfo);
+//Output will be Function definition of betBikerInfo
+// f (bikeModel) {
+//     return this.name + ' use '+ bikeModel;
+// }
+console.log(bikerInfo('Suzuki Gixxer SF'));
+//Output
+// Jaber Al Nahian use Suzuki Gixxer SF
