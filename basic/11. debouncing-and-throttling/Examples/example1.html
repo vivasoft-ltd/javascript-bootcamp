@@ -1,0 +1,42 @@
+<!-- In this example, we will see an example of Throttling.
+As we already know, Throttling is a technique, 
+to limit the execution of an event handler function, 
+even when this event triggers continuously due to user actions.
+
+Suppose an app sends OTP for login everytime, and it wants to 
+limit sending OTPS to users to login. In 10 seconds time margin, user can only
+get otp once, meaning he/she can only login to the app one time in 10
+seconds timeframe. We can implement this using Throttling -->
+
+<!DOCTYPE html>
+<head>
+    <title>Throttling</title>
+</head>
+<body>
+    <button onclick="getOTP()">Get OTP for Login</button>
+    <script>
+        const otp = ()=> {
+            console.log("Here's your OTP code")
+        }
+        // throttling function
+        const throttleFunction = (func, interval) => {
+            let shouldSend = true;
+            return function(){
+                if(shouldSend){
+                    func();
+                    shouldSend = false;
+                    setTimeout(()=>{
+                        shouldSend = true;
+                    }, interval)
+                }
+            }
+        }
+        const getOTP = throttleFunction(otp, 10000);
+
+    </script>
+</body>
+</html>
+
+<!-- Here, in this code, even if the users try to login in the app
+many times, he/she can only get otp one time in 10 seconds, he/she needs to wait
+10 seconds to login again -->

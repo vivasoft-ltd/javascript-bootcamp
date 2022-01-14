@@ -1,0 +1,35 @@
+<!-- In this example, we will see an example of Debouncing.
+As we already know, The debounced function will ignore 
+all calls to it until the calls have stopped for a specified time period.
+
+Suppose we want to make a chat app where we want to send the message automatically if 
+the users stops typing for 5 seconds. -->
+
+<!DOCTYPE html>
+<head>
+    <title>Debouncing Example</title>
+</head>
+<body>
+    <input type="text" onkeypress="sendMessage()" />
+    <script>
+        const send = () => {
+            console.log("Message sent")
+        }
+        // debouncing function
+        const debounceFunction = (func, delay) => {
+            let timer;
+            return function(...args){
+                const context = this;
+                clearTimeout(timer)
+                timer = setTimeout(()=>{
+                    func.apply(context, args)
+                }, delay)
+            }
+        }
+        const sendMessage = debounceFunction(send, 5000);
+
+    </script>
+</body>
+</html>
+
+<!-- Here, if the user stops typing for 5 seconds, the app automatically sends message. -->
