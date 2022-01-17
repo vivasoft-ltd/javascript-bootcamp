@@ -1,5 +1,4 @@
-Consider the below code where we have created two PC builds using factory pattern. How can you improve this code by using
-the factory design pattern with dynamic values as parameters?
+নিচের কোড টি খেয়াল করুন। এটাতে factory pattern ব্যাবহার করা হয়েছে। আপনি কিভাবে এটাকে আর ভাল করতে পারেন? সাথে dynamic parameters দিয়ে?
 
 ```javascript
 function pc1() {

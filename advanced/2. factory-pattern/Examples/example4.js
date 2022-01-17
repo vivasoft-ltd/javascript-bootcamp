@@ -1,4 +1,4 @@
-//Example for Javascript Factory Pattern Function
+//Factory Pattern মেথড ব্যাবহার করার উদাহরণ
 //Live: https://jsfiddle.net/rijans/zhLcbepo/5/
 
 function makePersonalHomePage(metaTitle) {
@@ -17,6 +17,6 @@ console.log(homePageOfJaber.make_html());
 const homePageOfVivaSoft = makePersonalHomePage('VivaSoft\'s Home');
 console.log(homePageOfVivaSoft.make_html());
 
-//Output:
+//ফলাফল:
 //A page with the title of Jaber's Home is made!"
 //A page with the title of VivaSoft's Home is made!"

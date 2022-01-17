@@ -1,9 +1,8 @@
-//Examples for Call(), Apply() and Bind() Methods
+//Call(), Apply() and Bind() Method এর জন্য উদাহরণ
 //Live Example: https://jsfiddle.net/rijans/806Lbwue/14/
 
-//.call() Method Example:
-
-//1st Example of .call() method
+//.call() Method এর দুটি উদাহরণ:
+//.call() method এর প্রথম উদাহরণ
 let car = {
     name: 'Mitsubishi Lancer X'
 }
@@ -13,9 +12,9 @@ let getCarInfo = function (ccValue) {
 }
 
 console.log(getCarInfo.call(car, 150));
-//Output: Suzuki Gixxer SF is 150 CC.
+//ফলাফল: Suzuki Gixxer SF is 150 CC.
 
-//2nd Example of .call method
+//.call method এর দ্বিতীয় উদাহরণ
 function Car(wheelCount, engineCount){
     this.wheels = wheelCount;
     this.engines = engineCount;
@@ -29,7 +28,7 @@ function LancerX(wheelCount, engineCount, engineCC, brand){
 
 let newLancerX = new LancerX(4,1, 1500, 'Mitsubishi');
 console.log(newLancerX);
-//Output:
+//ফলাফল:
 // {
 //     brand: "Mitsubishi",
 //     engineCC: 150,
@@ -39,7 +38,7 @@ console.log(newLancerX);
 
 
 
-//.apply() Method Example:
+//.apply() Method এর উদাহরণ:
 function NoteBook(ramCapacity, processorDetail){
     this.ram = ramCapacity;
     this.cpu = processorDetail;
@@ -52,7 +51,7 @@ function NoteBookModelX(ramCapacity, processorDetail, brand){
 
 let newNoteBookModelX = new NoteBookModelX('16GB','3.5 GHz, 4 Core', 'ASUS');
 console.log(newNoteBookModelX);
-//Output::
+//ফলাফল::
 //{
 //    brand: "ASUS",
 //    ram: 16GB,
@@ -61,7 +60,7 @@ console.log(newNoteBookModelX);
 
 
 
-//.bind() Method Example
+//.bind() Method এর উদাহরণ
 let drone = {
     name: 'DJI Mavic Pro'
 }
@@ -73,10 +72,10 @@ let getDroneInfo = function (droneRance) {
 let droneInfo = getDroneInfo.bind(drone);
 
 console.log(droneInfo);
-//Output will be Function definition of betBikerInfo
+//ফলাফল হবে betBikerInfo এর Function definition
 // f (droneRance) {
 //   return this.name + ' has '+ droneRance + " Range";
 // }
 console.log(droneInfo('10KM'));
-//Output
+//ফলাফল:
 // DJI Mavic Pro has 10KM Range

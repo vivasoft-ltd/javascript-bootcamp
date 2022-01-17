@@ -1,9 +1,8 @@
-//Examples for Call(), Apply() and Bind() Methods
+//Call(), Apply() and Bind() Method এর জন্য উদাহরণ
 //Live Example: https://jsfiddle.net/rijans/6tnejcLa/7/
 
-//.call() Method Example:
-
-//1st Example of .call() method
+//.call() Method এর দুটি উদাহরণ:
+//.call() method এর প্রথম উদাহরণ
 let bike = {
     name: 'Suzuki Gixxer SF'
 }
@@ -15,7 +14,7 @@ let getBikeInfo = function (ccValue) {
 console.log(getBikeInfo.call(bike, 150));
 //Output: Suzuki Gixxer SF is 150 CC.
 
-//2nd Example of .call method
+//.call method এর দ্বিতীয় উদাহরণ
 function MotorBike(wheelCount, engineCount){
     this.wheels = wheelCount;
     this.engines = engineCount;
@@ -29,7 +28,7 @@ function GixxerSF(wheelCount, engineCount, engineCC, brand){
 
 let newGixxerSF = new GixxerSF(2,1, 150, 'Suzuki');
 console.log(newGixxerSF);
-//Output:
+//ফলাফল:
 // {
 //     brand: "Suzuki",
 //     engineCC: 150,
@@ -39,7 +38,7 @@ console.log(newGixxerSF);
 
 
 
-//.apply() Method Example:
+//.apply() Method এর উদাহরণ:
 function bicycle(wheelCount, engineCount){
     this.wheels = wheelCount;
     this.engines = engineCount;
@@ -52,7 +51,7 @@ function bicycleModelX(wheelCount, engineCount, brand){
 
 let newBicycleModelX = new bicycleModelX(2,0, 'Phonix');
 console.log(newBicycleModelX);
-//Output::
+//ফলাফল::
 //{
 //    brand: "Phonix",
 //    engines: 0,
@@ -61,7 +60,7 @@ console.log(newBicycleModelX);
 
 
 
-//.bind() Method Example
+//.bind() Method এর উদাহরণ
 let biker = {
     name: 'Jaber Al Nahian'
 }
@@ -73,10 +72,11 @@ let getBikerInfo = function (bikeModel) {
 let bikerInfo = getBikerInfo.bind(biker);
 
 console.log(bikerInfo);
-//Output will be Function definition of betBikerInfo
+//ফলাফল হবে betBikerInfo এর Function definition
+
 // f (bikeModel) {
 //     return this.name + ' use '+ bikeModel;
 // }
 console.log(bikerInfo('Suzuki Gixxer SF'));
-//Output
+//ফলাফল
 // Jaber Al Nahian use Suzuki Gixxer SF

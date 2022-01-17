@@ -1,5 +1,6 @@
 নিচের কোডটি লক্ষ্য করুন। ইহা কি রান হবে? যদি হয়, ইহাতে আলাদা আলাদা করে call(), apply() এন্ড bind() ইমপ্লিমেন্ট করে দেখাও:
 
+````js
 function User(uId, uName, uPhone, uEmail) {
     this.user_id = uId;
     this.user_name = uName;
@@ -23,3 +24,4 @@ let getAdminInfo = function (uId, uName, uPhone, uEmail, appUsername) {
 }
 
 console.log(getAdminInfo(12, 'jaber', '017','j@gmail.com','jbr'));
+````

@@ -5,8 +5,8 @@ let user = {
 
 user = 'Vivasoft';
 
-//when we re-assigned user variable, JS finds that the previous object is no more in use,
-// so previous object is considered as garbage
+//জখন আমরা ইউজার ভারিয়াবল কে re-assign করলাম, JS দেখল আগের object আর ব্যাবহার হচ্ছেনা
+//তাই আগের object তাকে garbage হিসাবে মনে করবে
 
 function createUser() {
     var user1 = { };
@@ -19,6 +19,5 @@ function createUser() {
 createUser();
 
 
-// Because user1 and user2 still hold references to each other,
-// they cannot be cleared with reference-counting.
-// The 'Mark and sweep algorithm' can find garbage here
+//যেহেতু user1 এবং user2 এখনো আগের সম্পর্ক বজায়ে রেখেছে, সেহেতু তাদেরকে reference-counting দিয়ে মুছা যাবেনা।
+//এখানে "Mark and Sweep Algorithm" টা ব্যাবহার করতে হবে।

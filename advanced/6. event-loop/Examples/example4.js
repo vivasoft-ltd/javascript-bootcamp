@@ -1,5 +1,5 @@
-//JS Eventloop Example by geting Headers from an URL
-//This is done by Ajax Request whis is an Asynchronous
+//JS Eventloop এর উদাহরণ দেখান হয়েছে একটা URL এ request পাঠিয়ে
+//এটা করা হয়েছে এজ্যাক্স Request এর মাধ্যমে, যেটা Asynchronous
 //live: https://jsfiddle.net/rijans/v17t6qhu/10/
 
 
@@ -21,7 +21,7 @@ function main(url){
 
 main('https:://vivasofltd.com');
 
-//Here the output is:
+//এটার ফলাফল এমন:
 // "Let get URL Headers!"
 // "End!"
 // "content-encoding: gzip
@@ -33,5 +33,4 @@ main('https:://vivasofltd.com');
 // x-runtime: 0.002067
 // "
 
-//Note that the header response has come later because of Even Loop
-
+//লক্ষ করে দেখুন যে header response টা পরে আসছে, event লুপ এর কারণে

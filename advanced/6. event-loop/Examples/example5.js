@@ -1,4 +1,4 @@
-//JS Eventloop Example by couting number
+//JS Eventloop এর উদাহরণ দেখান হয়েছে, নাম্বার counting এর মাধ্যমে।
 //live: https://jsfiddle.net/rijans/pkb3tsLg/
 
 
@@ -14,7 +14,7 @@ function main(number) {
 
 main(5);
 
-//Here the output is:
+//এখানে output হবে এমন:
 // "Lets count from 0 to 5"
 // "Done!"
 // "6
@@ -30,5 +30,5 @@ main(5);
 // "6
 // "
 
-//This happened due to var variable and even-loop. It can be quick fixed by using let variable with i.
+//এটা ভার ভারিয়াবল এবং event-loop এর কারণে হয়েছে। এখানে লেট ভারিয়াবল ব্যাবহার করলে থিক ফল আসবে।
 

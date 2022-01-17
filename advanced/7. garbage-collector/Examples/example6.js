@@ -11,5 +11,5 @@ console.log(list[0])
 list = null;
 console.log(list) // Output: null
 
-// Now the reference function is garbage
+//এখন রেফেরেঞ্চ function একটি garbage
 

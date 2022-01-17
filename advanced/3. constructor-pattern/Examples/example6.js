@@ -1,4 +1,4 @@
-//Example for Javascript Constructor Pattern Function
+//Constructor Pattern মেথড ব্যাবহার করার উদাহরণ
 //Live: https://jsfiddle.net/rijans/opu1xckt/
 
 function CreateUser(username, fName, lName, email) {
@@ -18,6 +18,6 @@ console.log(user1.createUser());
 const user2 = new CreateUser('tareq', 'Shafiul Hasan', 'Tareq', 't@gmail.com');
 console.log(user2.createUser());
 
-//Output:
+//ফলাফল:
 //"A User with username jaber, first name Jaber and last name Al Nahian is created!"
 //"A User with username tareq, first name Shafiul Hasan and last name Tareq is created!"

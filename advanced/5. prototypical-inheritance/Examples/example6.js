@@ -1,4 +1,4 @@
-//Prototypical Inheritence Example
+//Prototypical Inheritance এর একটি উদ্বাহরও দেখান হল।
 
 let plant = {
     hasLeaf: 'yes'
@@ -10,4 +10,4 @@ let cactus = {
 }
 
 console.log(cactus.hasLeaf);
-//Output true
+//ফলাফল: true

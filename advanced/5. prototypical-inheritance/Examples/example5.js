@@ -1,4 +1,4 @@
-//Prototypical Inheritence Example
+//Prototypical Inheritance এর একটি উদ্বাহরও দেখান হল।
 
 let smartPhone = {
     hasCamera: true
@@ -10,4 +10,4 @@ let nokiaPhone = {
 }
 
 console.log(nokiaPhone.hasCamera);
-//Output: true
+//ফলাফল: true
