@@ -1,10 +1,10 @@
 ### Event delegation and propagation
 
-ইভেন্ট delegation ইভেন্ট propagation পদ্ধতি ব্যবহার করে। ইভেন্ট delegation কীভাবে কাজ করে তা বোঝার জন্য, আমাকে প্রথমে ইভেন্ট propagation বুঝতে হবে।
+ইভেন্ট delegation ইভেন্ট propagation পদ্ধতি ব্যবহার করে। ইভেন্ট delegation কীভাবে কাজ করে তা বোঝার জন্য, আমাদেরকে প্রথমে ইভেন্ট propagation বুঝতে হবে।
 
 
 ### Event propagation
-আপনি যখন নিম্নলিখিত HTML এ button টি ক্লিক করেন:
+আপনি যখন নিম্নলিখিত HTML এর button টি ক্লিক করেনঃ
 ```
 <html>
   <body>
@@ -15,12 +15,12 @@
 </html>
 ```
 
-একটি ক্লিক ইভেন্ট কতগুলি element এ ট্রিগার হয়? button টি নিজেই একটি ক্লিক ইভেন্ট পায়। কিন্তু এছাড়াও সমস্ত বোতামের ancestors এবং এমনকি document এবং window অবজেক্ট ক্লিক ইভেন্ট পায়।
+একটি ক্লিক ইভেন্ট কতগুলি element এ ট্রিগার হয়? button টি নিজেই একটি ক্লিক ইভেন্ট পায়। কিন্তু এছাড়াও ঐ button এর সকল ancestors এবং এমনকি document ও window অবজেক্ট ক্লিক ইভেন্ট পায়।
 
 একটি ক্লিক ইভেন্ট 3টি পর্যায়ে প্রচারিত হয়:
 1. Capture phase — window, document এবং root element থেকে শুরু করে ইভেন্ট টার্গেট এলিমেন্টের ancestor মধ্য দিয়ে নিচে নেমে যায়।
 2. Target phase — ব্যবহারকারী যে element টিতে ক্লিক করেছেন তাতে ইভেন্টটি ট্রিগার হয়।
-3. Bubble phase — অবশেষে, root element, document এবং window পর্যন্ত target element এর ancestor এর মাধ্যমে event টি buble up হয়ে যায়।
+3. Bubble phase — অবশেষে, root element, document এবং window পর্যন্ত target element এর ancestor এর মাধ্যমে event টি bubble up হয়ে যায়।
 
 ![image](https://user-images.githubusercontent.com/712313/143814244-4e801a09-f50f-4d87-8503-2686d5f0f1db.png)
 
@@ -33,14 +33,14 @@
   
 নিচের method এর তৃতীয় আর্গুমেন্ট হল `captureOrOptions` আপনাকে বিভিন্ন পর্যায় থেকে ইভেন্টগুলি ধরতে দেয়:
 ```
-element.addEventListener(eventType, handler[, captureOrOptions]);
+element.addEventListener(eventType, handler, [captureOrOptions]);
 ```
   
-- যদি captureOrOptions argument টি  missing, false বা { capture: false } হয়, তাহলে listener target এবং buble phase এর event গুলি ক্যাপচার করে
+- যদি captureOrOptions argument টি  missing, false বা { capture: false } হয়, তাহলে listener target এবং bubble phase এর event গুলি ক্যাপচার করে
 - যদি argument টি true হয় বা { capture: true } হয়, তাহলে listener ক্যাপচার পর্বের ঘটনাগুলি শোনে।
   
   তাহলে, কিভাবে ইভেন্ট propagation একাধিক button এর event ক্যাপচার করতে সাহায্য করে?
-  অ্যালগরিদম টি সহজ: ইভেন্ট লিসেনারকে button এর parent এর সাথে সংযুক্ত করুন, এবং একটি button ক্লিক করা হলে buble ইভেন্ট ধরতে হবে। ঠিক এভাবেই ইভেন্ট delegation কাজ করে।
+  অ্যালগরিদম টি সহজ: ইভেন্ট লিসেনারকে button এর parent এর সাথে সংযুক্ত করুন, এবং একটি button ক্লিক করা হলে bubble ইভেন্ট ধরতে হবে। ঠিক এভাবেই ইভেন্ট delegation কাজ করে।
   
   
 ### Event delegation
@@ -65,7 +65,7 @@ element.addEventListener(eventType, handler[, captureOrOptions]);
 
 
   
-ইভেন্ট delegation mechanish টি অনেক সহজ. ইভেন্ট listener দের সরাসরি button গুলিতে সংযুক্ত করার পরিবর্তে, আপনি parent <div id="buttons"> listen delegate করেন। যখন একটি এ ক্লিক করা হয়, তখন মূল element টির listener buble ইভেন্টটি ধরে।
+ইভেন্ট delegation mechanism টি অনেক সহজ. ইভেন্ট listener দের সরাসরি button গুলিতে সংযুক্ত করার পরিবর্তে, আপনি parent <div id="buttons"> listen delegate করেন। যখন একটি এ ক্লিক করা হয়, তখন মূল element টির listener bubble ইভেন্টটি ধরে।
   
 ইভেন্ট delegation ব্যবহার করার জন্য 3টি পদক্ষেপ প্রয়োজন:
   
@@ -74,11 +74,11 @@ element.addEventListener(eventType, handler[, captureOrOptions]);
   
 **Step 2. ইভেন্ট listener কে মূল element এর সাথে সংযুক্ত করুন**
   
-```document.getElementById('buttons') .addEventListener('click', handler)```
-ইভেন্ট লিসেনারকে button এর parent element এর সাথে সংযুক্ত করে। এই listener button ক্লিকে প্রতিক্রিয়া দেখায় কারণ button ক্লিক ইভেন্ট ancestor এর মাধ্যমে buble করে event propagation এর কারণে।
+```document.getElementById('buttons').addEventListener('click', handler)```
+ইভেন্টটি লিসেনারকে button এর parent element এর সাথে সংযুক্ত করে। এই listener button ক্লিকে প্রতিক্রিয়া দেখায় কারণ button ক্লিক ইভেন্ট ancestor এর মাধ্যমে bubble করে event propagation এর কারণে।
 **Step 3. target element নির্বাচন করতে event.target ব্যবহার করুন**
  
-যখন একটি button ক্লিক করা হয়, হ্যান্ডলার ফাংশন একটি event object argument এর সঙ্গে invoke হয়. event.target property হল সেই element যার উপর ইভেন্টটি পাঠানো হয়েছে, যা উদাহরণে একটি button 
+যখন একটি button ক্লিক করা হয়, হ্যান্ডলার ফাংশন একটি event object argument এর সঙ্গে invoke হয়. event.target.property হল সেই element যার উপর ইভেন্টটি পাঠানো হয়েছে, যা উদাহরণে একটি button 
 ```
   .addEventListener('click', event => {
     if (event.target.className === 'buttonClass') {
