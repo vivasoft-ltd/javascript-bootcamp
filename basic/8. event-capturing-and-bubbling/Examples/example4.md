@@ -1,8 +1,9 @@
-<!-- 
+
 ইফেক্ট বুঝতে হলে প্রথমে এই HTML ফাইলটি আপনার ব্রাউজারে ওপেন করে মাউসের রাইট বাটন ক্লিক করে Inspect এ ক্লিক করুন।
 অতঃপর Console ট্যাবে ক্লিক করুন। এখন Event Bubbling ও Event Capturing কিভাবে হচ্ছে সেটা বুঝতে বক্সগুলোতে
 ক্লিক করে দেখুন। 
--->
+
+```html
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,34 +15,28 @@
 
     <!-- CSS Style for Better Visualization -->
     <style>
-        body {
-            height: 100vh;
-        }
+        body { height: 100vh; }
         h2 { text-align: center; }
+        div { border: 2px solid black; }
         .mid {
             display: flex;
             justify-content: space-around;
             align-items: center;
             cursor: pointer;
+            transition: .5s ease;
         }
         .hw300 {
             height: 300px;
             width: 300px;
         }
-        .hw200 {
-            height: 200px;
-            width: 200px;
+        .hw150 {
+            height: 150px;
+            width: 150px;
         }
-        .hw100 {
-            height: 100px;
-            width: 100px;
-        }
-        #red { background-color: red; }
-        #green { background-color: green; }
-        #skyblue { background-color: skyblue; }
-        #blue { background-color: blue; }
-        #purple { background-color: purple; }
-        #gold { background-color: goldenrod; }
+        .red { background-color: red; }
+        .lime { background-color: lime; }
+        .blue { background-color: blue; }
+        .gold { background-color: gold; }
     </style>
 </head>
 <body class="mid" style="cursor: auto;">
@@ -49,10 +44,8 @@
     <h2>
         Event Bubbling
         <div id="red" class="mid hw300">
-            <div id="green" class="mid hw200">
-                <div id="skyblue" class="mid hw100">
-                    Click Me
-                </div>
+            <div id="lime" class="mid hw150">
+                Click Me
             </div>
         </div>
     </h2>
@@ -61,10 +54,8 @@
     <h2>
         Event Capturing
         <div id="blue" class="mid hw300">
-            <div id="purple" class="mid hw200">
-                <div id="gold" class="mid hw100">
-                    Click Me
-                </div>
+            <div id="gold" class="mid hw150">
+                Click Me
             </div>
         </div>
     </h2>
@@ -73,42 +64,43 @@
     <!-- JavaScript Code for Functionality -->
     <script>
         const redDiv = document.querySelector('#red');
-        const greenDiv = document.querySelector('#green');
-        const skyblueDiv = document.querySelector('#skyblue');
+        const limeDiv = document.querySelector('#lime');
         const blueDiv = document.querySelector('#blue');
-        const purpleDiv = document.querySelector('#purple');
         const goldDiv = document.querySelector('#gold');
 
         // Event Bubbling Phase
         redDiv.addEventListener('click', () => {
             console.log('Red box clicked.');
-        }, false)
-        greenDiv.addEventListener('click', () => {
-            console.log('Green box clicked');
-        }, false)
-        skyblueDiv.addEventListener('click', () => {
-            console.log('Skyblue box clicked');
-        }, false)
+            const timeout = setTimeout(() => {
+                redDiv.classList.add('red');
+            }, 500);
+        })
+        limeDiv.addEventListener('click', () => {
+            console.log('Lime box clicked');
+            const timeout = setTimeout(() => {
+                limeDiv.classList.add('lime');
+            }, 100);
+        })
         
         // Event Capturing Phase
         blueDiv.addEventListener('click', () => {
             console.log('Blue box clicked.');
-        }, true)
-        purpleDiv.addEventListener('click', () => {
-            console.log('Purple box clicked');
+            const timeout = setTimeout(() => {
+                blueDiv.classList.add('blue');
+            }, 100);
         }, true)
         goldDiv.addEventListener('click', () => {
             console.log('Golden box clicked');
+            const timeout = setTimeout(() => {
+                goldDiv.classList.add('gold');
+            }, 500);
         }, true)
-
-        /** 
-        * addEventListener() ফাংশনের তৃতীয় argument হিসেবে আমরা যে true/false ভ্যালু
-        * দিয়েছি সেটা বাই ডিফল্ট false থাকে অর্থাৎ nested element ক্লিক করার ক্ষেত্রে সেটা বাই ডিফল্ট 
-        * event bubbling করে থাকে। বিষয়টি যদি অন্যভাবে বলি তাহলে বলা যায় যে তৃতীয় আর্গুমেন্টে 
-        * জিজ্ঞাসা করা থাকে এই event টি প্রথমে capture করা হবে নাকি হবে না।
-        */
 
     </script>
 
 </body>
 </html>
+
+```
+
+এই উদাহরণে আমরা তেমন কোন নতুন কাজ করি নাই। এই উদাহরণে আমরা শুধুমাত্র প্রোসেস দুটি কিভাবে হচ্ছে সেটার একটা ভিজুয়াল ইফেক্ট তৈরী করেছি।
