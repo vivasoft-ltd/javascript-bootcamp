@@ -1,12 +1,13 @@
-<!-- Event delegation takes advantage of event propagation. 
+Event delegation takes advantage of event propagation. 
 It allows the event listener to be set on a parent element, 
 thus avoiding adding event listeners to all the elements.
 
 The event listener is set on a parent element which listens for click events.
 If parent element is clicked, the callback will compare 
 event.target (element which was clicked) against a common property.
-This will be clear if we see the example below: -->
+This will be clear if we see the example below:
 
+```html
 <!DOCTYPE html>
 <head>
     <title>Event Delegation and Propagation</title>
@@ -53,8 +54,9 @@ This will be clear if we see the example below: -->
     </script>
 </body>
 </html>
+```
 
-<!-- When a button or element is clicked, 
+When a button or element is clicked, 
 the listener of the parent element catches the bubbling event.
 
 If we click on Button 1, then the output will be:
@@ -66,4 +68,4 @@ Here, using event delegation we dont need to add a
 click listener to every one of the elements like we saw 
 in the previous topic. We just need to add a event listener
 to the parent div and by using event bubbling formula, we can access
-the clicked child element by using 'e.target' -->
+the clicked child element by using 'e.target'
