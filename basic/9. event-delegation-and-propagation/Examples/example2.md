@@ -1,10 +1,10 @@
-<!-- Another classic example of event delegation would be 
+Another classic example of event delegation would be 
 this example below, which we might use regularly. 
 
 Suppose we have a div on which we have many input boxes. 
 We want to convert specific input values to uppercase. -->
 
-
+```html
 <!DOCTYPE html>
 <head>
     <title>Event Delegation & Propagation</title>
@@ -29,3 +29,4 @@ We want to convert specific input values to uppercase. -->
     </script>
 </body>
 </html>
+```
