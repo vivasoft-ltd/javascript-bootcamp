@@ -1,8 +1,10 @@
-<!-- We already know the basics of event capturing and bubbling. 
-In this example, we will dive a little deeper. 
-The third argument of 'addEventListener' function tell 
-whether the event will be in the capture phase or in the bubbling phase. 
-By default it is in bubbling phase (if we provide no parameter) -->
+We can stop event capturing and bubbling if we want.
+We can use a parameter "e" in the callback function of 
+addEventListener function. It is an event object
+which has a function called stopPropagation() which helps
+to stop event capturing and bubbling.
+
+```html
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +12,7 @@ By default it is in bubbling phase (if we provide no parameter) -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Bubbling and Capturing</title>
+    <title>How to stop Event Capturing and Bubbling</title>
     <!-- Some css to identify the divs easily -->
     <style>
         div {
@@ -48,36 +50,29 @@ By default it is in bubbling phase (if we provide no parameter) -->
         const parent = document.getElementById("parent")
         const child = document.getElementById("child")
         // bubbling
-        grandparent.addEventListener("click", ()=> {
+        grandparent.addEventListener("click", (e)=> {
             console.log("Grandparent clicked");
-        }, false)
-        // capturing or trickling
-        parent.addEventListener("click", ()=> {
-            console.log("Parent clicked");
-        }, true)
+        })
         // bubbling
-        child.addEventListener("click", ()=> {
+        parent.addEventListener("click", (e)=> {
+            console.log("Parent clicked");
+            e.stopPropagation()
+        })
+        // bubbling
+        child.addEventListener("click", (e)=> {
             console.log("Child clicked");
-        }, false)
+        })
     </script>
 </body>
 </html>
 
-<!-- Run the code. now click on the child div. We can see that the output will be.
+```
 
-Output: 
-Parent clicked
+Output:
 Child clicked
-Grandparent clicked
+Parent clicked
 
-We can see that the event capturing of event listeners happened first 
-and then the event bubbling happened.
-This means the propagation of event listeners first goes from 
-outside to inside and then from inside to outside in the DOM. 
-As 'parent' div is propagated, it prints to the console first,
-then by follwing event capturing rules, 'child' div is clicked
-and 'grandparent' div is clicked.
-
-I hope things are clear now. We can play with this code as we want
-and see different output.
--->
+If we clicked on child div, the propagation is stopped 
+on parent div and does not move to grandparent div. 
+Hence, the event bubbling is prevented. 
+We can also stop capturing the same way.
