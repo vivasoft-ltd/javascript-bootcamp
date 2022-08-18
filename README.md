@@ -6,3 +6,4 @@
 ## To get started:
 1. [Basic](basic)
 2. [Advanced](advanced)
+3. [Projects](projects)
