@@ -1,6 +1,6 @@
 # VivaSoft JavaScript Bootcamp Projects
 
-Thisrepository contains all the projects for VivaSoft Javascript Bootcamp.
+This repository contains all the projects for VivaSoft Javascript Bootcamp.
 
 |  #  | Project                                                                                         | Live Demo                                                           |
 | :-: | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
