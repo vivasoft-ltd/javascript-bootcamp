@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Big Bang</title>
+</head>
+
+<body style="margin: 0; background-color: black;">
+
+
+    <div id="modalEl" style="position: absolute; top: 50%; left: 50%; width: 40%; transform: translate(-50%, -50%);">
+        <div style="background-color: white; text-align: center; padding: 30px;">
+            <h1 style="display: inline;font-weight: bold; size: 100px;" id="finalScore">0</h1>
+            <p style="color: gray; font-weight: 700;">Points</p>
+            <button style="background-color:  blue; font-size: 16px;
+            margin: 4px 2px; padding: 15px 32px; color: white" onclick=startGame()>Start Game</button>
+        </div>
+    </div>
+
+
+    <div style="position: fixed; color: white; padding: 2rem;">
+        <span>Score: </span>
+        <span id="scoreId">0</span>
+    </div>
+    <canvas></canvas>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
