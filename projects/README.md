@@ -4,5 +4,7 @@ This repository contains all the projects for VivaSoft Javascript Bootcamp.
 
 |  #  | Project                                                                                         | Live Demo                                                           |
 | :-: | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+<<<<<<< HEAD
 | 01  | [Expanding Cards](expanding-cards) | [Live Demo](https://blackbox47.github.io/expanding-cards/) |
 | 02  | [Modal](modal) | [Live Demo](https://saroarshahan.github.io/modal/) |
+| 03  | [Big Bang](big-bang) | [Live Demo](https://blackbox47.github.io/big-bang/) |
