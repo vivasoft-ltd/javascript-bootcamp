@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Modal || Vanilla JavaScript</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <button class="btn" id="openModal">Open</button>
+    <div class="modal modal--small">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">Modal Title</h2>
+                <span class="modal__close modal__close--icon">X</span>
+            </div>
+            <div class="modal__body">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis ratione veritatis doloribus laudantium consequatur accusamus.
+                </p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam iusto impedit vel obcaecati officia modi sit laudantium adipisci fugit dolorum animi natus, doloribus, dolorem assumenda sunt a dicta fuga temporibus! Ipsam inventore magni eligendi fugit distinctio quaerat voluptas? Tempora, neque!</p>
+            </div>
+            <div class="modal__footer modal__footer--right">
+                <button class="btn btn--primary">save</button>
+                <button class="btn btn--danger modal__close">cancel</button>
+            </div>
+        </div>
+        <div class="modal__backdrop modal__close"></div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
