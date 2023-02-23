@@ -1,11 +1,11 @@
 ### Event capturing and bubbling
 
-ইভেন্ট bubbling এবং ক্যাপচারিং HTML DOM API-এ ইভেন্ট প্রচারের দুটি উপায়, যখন একটি event অন্য element এর  ভিতরে একটি element এ ঘটে, এবং উভয় element সেই ইভেন্টের জন্য একটি হ্যান্ডেল নিবন্ধিত করেছে. ইভেন্ট propagation মোড নির্ধারণ করে কোন ক্রমে elements গুলি ইভেন্টটি গ্রহণ করে. bubbling এ, event টি প্রথমে অন্তরতম element দ্বারা বন্দী এবং পরিচালনা করা হয় এবং তারপরে বাইরের element গুলিতে প্রচার করা হয়. Capturing এ, event টি সর্বপ্রথম বাইরের element দ্বারা ধারণ করা হয় এবং ভিতরের element গুলিতে প্রচার করা হয়. আমরা ব্যবহার করতে পারি addEventListener(type, listener, useCapture) bubbling(ডিফল্ট) বা ক্যাপচারিং মোডে ইভেন্ট হ্যান্ডলারদের নিবন্ধন করতে. ক্যাপচারিং মডেল ব্যবহার করতে তৃতীয় যargument টিকে true হিসাবে পাস করুন.
+ইভেন্ট bubbling এবং ক্যাপচারিং HTML DOM API-এ ইভেন্ট প্রচারের দুটি উপায়, যখন একটি event অন্য element এর  ভিতরে একটি element এ ঘটে, এবং উভয় element সেই ইভেন্টের জন্য একটি হ্যান্ডেল নিবন্ধিত করেছে. ইভেন্ট propagation মোড নির্ধারণ করে কোন ক্রমে elements গুলি ইভেন্টটি গ্রহণ করে. bubbling এ, event টি প্রথমে অন্তরতম element দ্বারা বন্দী এবং পরিচালনা করা হয় এবং তারপরে বাইরের element গুলিতে প্রচার করা হয়. Capturing এ, event টি সর্বপ্রথম বাইরের element দ্বারা ধারণ করা হয় এবং ভিতরের element গুলিতে প্রচার করা হয়. আমরা ব্যবহার করতে পারি addEventListener(type, listener, useCapture) bubbling(ডিফল্ট) বা ক্যাপচারিং মোডে ইভেন্ট হ্যান্ডলারদের নিবন্ধন করতে. ক্যাপচারিং মডেল ব্যবহার করতে তৃতীয় argument টিকে true হিসাবে পাস করুন.
 
-উদাহরণ 
-```
+উদাহরণঃ
+```html
 <div id="p1">  
-    <button id="c1">I am child button</button>  
+  <button id="c1">I am child button</button>  
 </div>
 ```
 উপরের কাঠামোতে, অনুমান করুন যে button element টিতে একটি ক্লিক ইভেন্ট ঘটেছে।
@@ -16,7 +16,7 @@ bubbling মডেলে, বিপরীত ঘটবে: ইভেন্টট
 ইভেন্ট ক্যাপচারিং-এ, একটি ইভেন্ট সবচেয়ে বাইরের element থেকে target এ চলে যায়. ইভেন্ট bubbling করার আগে ইভেন্ট ক্যাপচারিং করা হয় কিন্তু ক্যাপচারিং খুব কমই ব্যবহার করা হয় কারণ ইভেন্ট bubbling ইভেন্ট ফ্লো পরিচালনা করার জন্য যথেষ্ট।
 
 ইভেন্ট ক্যাপচারিং এর কাজ বোঝার জন্য একটি উদাহরণ কোড দেখি:
-```
+```html
 <body>  
   <div id="p1">  
     <button id="c1">I am Child</button>  
@@ -28,7 +28,8 @@ bubbling মডেলে, বিপরীত ঘটবে: ইভেন্টট
   
     parent.addEventListener('click', function(){  
       console.log("Parent is invoked");  
-    },true);  
+    }, true);
+
     child.addEventListener('click', function(){  
       console.log("Child is invoked");  
     });  
@@ -52,23 +53,24 @@ bubbling মডেলে, বিপরীত ঘটবে: ইভেন্টট
 ![image](https://user-images.githubusercontent.com/712313/142607966-a0227a6c-f5aa-4077-a694-6874fd34fe5c.png)
 
 #### Evnet Bubbling:
-ইভেন্ট bubling এর কাজের ধারণাটি বোঝার জন্য আসুন নীচের উদাহরণটি দেখি:
-```
+ইভেন্ট bubbling এর কাজের ধারণাটি বোঝার জন্য আসুন নীচের উদাহরণটি দেখি:
+```html
 <body>  
   <div id="p1">  
     <button id="c1">I am child button</button>  
   </div>  
     
   <script>  
-    var parent = document.querySelector('#p1');  
-      parent.addEventListener('click', function(){  
-        console.log("Parent is invoked");  
-      });  
+    var parent = document.querySelector('#p1');
+    var child = document.querySelector('#c1');
+
+    parent.addEventListener('click', function(){  
+      console.log("Parent is invoked");  
+    });  
   
-   var child = document.querySelector('#c1');  
-      child.addEventListener('click', function(){  
-        console.log("Child is invoked");  
-      });  
+    child.addEventListener('click', function(){  
+      console.log("Child is invoked");  
+    });  
   </script>  
 </body>
 ```  
@@ -76,17 +78,17 @@ bubbling মডেলে, বিপরীত ঘটবে: ইভেন্টট
 
 ![image](https://user-images.githubusercontent.com/712313/142606233-d0f93544-18dc-49e1-83e5-4d636f61d46e.png)
 
-- আমরা div id = p1 সহ একটি div ট্যাগ ব্যবহার করেছি এবং div-এর মধ্যে আমরা একটি button নেস্ট করেছি যার বাটন id = c1 আছে।
-- এখনে আমরা querySelector () ফাংশন ব্যবহার করে html element গুলি (p1 এবং c1) ভেরিয়েবল প্যারেন্ট এবং চাইল্ডকে assign করেছি।
-- এর পরে, আমরা একটি ইভেন্ট তৈরি করেছি এবং অন্তর্ভুক্ত করেছি যা div এলিমেন্ট এবং চাইল্ড button উভয়ের জন্য ক্লিক ইভেন্ট। এছাড়াও দুটি ফাংশন তৈরি করেছে যা আমাদের paent এবং child execution এর order জানতে সাহায্য করবে। এর অর্থ হল যদি চাইল্ড ইভেন্টটি প্রথমে invoke হয়, "Child is invoked" প্রিন্ট করা হবে অন্যথায় "parent is invoked" print হবে।
-- এইভাবে, button টি ক্লিক করা হলে, এটি প্রথমে প্রিন্ট করবে "Child is invoked" যার মানে হল যে child ইভেন্ট হ্যান্ডলারের মধ্যে ফাংশনটি প্রথমে কার্যকর করে। তারপর এটি ডিভ প্যারেন্ট ফাংশনের invoke এ চলে যায়।
+- আমরা div id = p1 সহ একটি div ট্যাগ ব্যবহার করেছি এবং div-এর মধ্যে আমরা একটি button নেস্ট করেছি যার id = c1 আছে।
+- এখনে আমরা querySelector() ফাংশন ব্যবহার করে html element গুলিকে (p1 এবং c1) যথাক্রমে parent এবং child নামক দুটি ভেরিয়েবলে assign করেছি।
+- এর পরে, আমরা div ও button উভয়ের জন্য একটি করে ক্লিক ইভেন্ট তৈরি করেছি এবং কলব্যাক ফাংশন হিসেবে দুটি ফাংশন তৈরি করেছি যা আমাদের parent এবং child execution এর order জানতে সাহায্য করবে। এর অর্থ হল যদি চাইল্ড ইভেন্টটি প্রথমে কল হয়, "Child is invoked" লেখাটি ব্রাউজারের console -এ প্রিন্ট হবে অন্যথায় "Parent is invoked" প্রিন্ট হবে।
+- এখন button টি ক্লিক করা হলে এটি প্রথমে "Child is invoked" প্রিন্ট করবে এবং পরে "Parent is invoked" প্রিন্ট করবে, অর্থাৎ প্রথমে button এর ইভেন্ট হ্যান্ডলার কাজ করবে তারপর div এর ইভেন্ট হ্যান্ডলারটি কাজ করবে।
 
-ইভেন্ট bubling এর কারণে sequence টি ঘটেছে। সুতরাং, এই ভাবে event bubling সঞ্চালিত হয়. এর মানে ব্যবহারকারী যখন button এ ক্লিক করেন, ক্লিক ইভেন্ট এই ক্রমে নীচে থেকে উপরে প্রবাহিত হয়। নিচের ফ্লো চার্টের সাহায্যে আমরা ইভেন্টের প্রবাহও বুঝতে পারি:
+ইভেন্ট bubbling এর কারণে এই ধরনের sequence টি ঘটেছে আর এভাবেই event bubbling সঞ্চালিত হয়। এর মানে ব্যবহারকারী যখন button এ ক্লিক করেন, ক্লিক ইভেন্ট এই ক্রমে নীচে থেকে উপরে প্রবাহিত হয়। নিচের ফ্লো চার্টের সাহায্যে আমরা ইভেন্টের প্রবাহ বুঝতে পারি:
 
 ![image](https://user-images.githubusercontent.com/712313/142606596-d3f2f583-6c89-41d7-b51a-17896f57a89e.png)
 
 
 
-নীচের diagram টি ইভেন্ট প্রবাহের সম্পাদন দেখায়:
+একটি ইভেন্টের সম্পূর্ণ প্রবাহ কিভাবে সম্পাদন হয় নীচের diagram টি দ্বারা সেটি দেখানো হলো:
 
 ![image](https://user-images.githubusercontent.com/712313/142607997-8b6caa69-3d3d-446c-a223-724218ff532e.png)
