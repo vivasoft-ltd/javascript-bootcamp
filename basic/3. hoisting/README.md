@@ -27,7 +27,7 @@ hoisting(); // Ouput: undefined
 ১. Variable Hoisting
 
 ```js
-	console.log(hoistingIntro); // Outpur: undefined
+	console.log(hoistingIntro); // Output: undefined
 
 	var hoistingIntro = "Hi there, I am a string one.";
 ```
@@ -52,7 +52,7 @@ hoisting(); // Ouput: undefined
 		console.log("Hoisted.");
 	}
 ```
-বিঃ দ্রঃ একটি কথা ভাল করে মনে রাখবেন যে জাভাস্ক্রিপ্ট ফানশন এক্সপ্রেশনের ক্ষেত্রে কোন Hoisting করে না।
+বিঃ দ্রঃ একটি কথা ভাল করে মনে রাখবেন যে জাভাস্ক্রিপ্ট ফাংশন এক্সপ্রেশনের ক্ষেত্রে কোন Hoisting করে না।
 
 ```js
 	hoistedFunEx(); // TypeError: hoistedFunEx is not a function

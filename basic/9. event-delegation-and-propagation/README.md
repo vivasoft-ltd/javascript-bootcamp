@@ -5,7 +5,8 @@
 
 ### Event propagation
 আপনি যখন নিম্নলিখিত HTML এর button টি ক্লিক করেনঃ
-```
+
+```html
 <html>
   <body>
     <div id="buttons">
@@ -25,14 +26,16 @@
 ![image](https://user-images.githubusercontent.com/712313/143814244-4e801a09-f50f-4d87-8503-2686d5f0f1db.png)
 
 নিম্নলিখিত ইভেন্ট হ্যান্ডলার <body> element এ সংঘটিত ক্যাপচার পর্বে ক্লিক ইভেন্টের জন্য শোনে
-  ```
+
+  ```javascript
   document.body.addEventListener('click', () => {
     console.log('Body click event in capture phase');
   }, true);
   ```
   
 নিচের method এর তৃতীয় আর্গুমেন্ট হল `captureOrOptions` আপনাকে বিভিন্ন পর্যায় থেকে ইভেন্টগুলি ধরতে দেয়:
-```
+
+```javascript
 element.addEventListener(eventType, handler, [captureOrOptions]);
 ```
   
@@ -46,7 +49,7 @@ element.addEventListener(eventType, handler, [captureOrOptions]);
 ### Event delegation
 আসুন একাধিক button এ ক্লিকগুলি ধরতে ইভেন্ট delegation ব্যবহার করি:
   
-  ```
+  ```html
   <div id="buttons"> 
     <button class="buttonClass">Click me</button>
     <button class="buttonClass">Click me</button>
@@ -65,29 +68,26 @@ element.addEventListener(eventType, handler, [captureOrOptions]);
 
 
   
-ইভেন্ট delegation mechanism টি অনেক সহজ. ইভেন্ট listener দের সরাসরি button গুলিতে সংযুক্ত করার পরিবর্তে, আপনি parent <div id="buttons"> listen delegate করেন। যখন একটি এ ক্লিক করা হয়, তখন মূল element টির listener bubble ইভেন্টটি ধরে।
+ইভেন্ট delegation mechanism টি অনেক সহজ, ইভেন্ট listener দের সরাসরি button গুলিতে সংযুক্ত করার পরিবর্তে, আপনি parent element `<div id="buttons">` -এ ইভেন্ট listen delegate করেন। যখন একটি ক্লিক করা হয়, তখন মূল element টির listener (parent element টির listener) bubble ইভেন্টটি ধরে।
   
 ইভেন্ট delegation ব্যবহার করার জন্য 3টি পদক্ষেপ প্রয়োজন:
   
-**Step 1. ইভেন্টগুলি দেখার জন্য element গুলির parent নির্ধারণ করুন৷**
-উপরের উদাহরণে, <div id="buttons"> হল button গুলির parent element
+**Step 1. ইভেন্টগুলি ধরার জন্য element গুলির parent নির্ধারণ করুন** </br>
+(উপরের উদাহরণে, `<div id="buttons">` হল button গুলির parent element)
   
 **Step 2. ইভেন্ট listener কে মূল element এর সাথে সংযুক্ত করুন**
-  
-```document.getElementById('buttons').addEventListener('click', handler)```
+`document.getElementById('buttons').addEventListener('click', handler)`
 ইভেন্টটি লিসেনারকে button এর parent element এর সাথে সংযুক্ত করে। এই listener button ক্লিকে প্রতিক্রিয়া দেখায় কারণ button ক্লিক ইভেন্ট ancestor এর মাধ্যমে bubble করে event propagation এর কারণে।
-**Step 3. target element নির্বাচন করতে event.target ব্যবহার করুন**
- 
-যখন একটি button ক্লিক করা হয়, হ্যান্ডলার ফাংশন একটি event object argument এর সঙ্গে invoke হয়. event.target.property হল সেই element যার উপর ইভেন্টটি পাঠানো হয়েছে, যা উদাহরণে একটি button 
-```
+
+**Step 3. target element নির্বাচন করতে event.target ব্যবহার করুন** </br>
+যখন একটি button ক্লিক করা হয়, হ্যান্ডলার ফাংশন একটি event object argument এর সঙ্গে invoke হয়, event.target.property হল সেই element যার উপর ইভেন্টটি পাঠানো হয়েছে, যা উদাহরণে একটি button 
+
+```javascript
   .addEventListener('click', event => {
     if (event.target.className === 'buttonClass') {
       console.log('Click!');
     }
   });
-```  
-  
- `event.currentTarget` সেই element টিকে নির্দেশ করে যেখানে ইভেন্ট listener সরাসরি সংযুক্ত থাকে। উদাহরণে, `event.currentTarget` হল `<div id="buttons">`। 
-  
- 
-  
+```
+
+`event.currentTarget` সেই element টিকে নির্দেশ করে যেখানে ইভেন্ট listener সরাসরি সংযুক্ত থাকে। উদাহরণে, `event.currentTarget` হল `<div id="buttons">`। 
